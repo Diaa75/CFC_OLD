@@ -1,0 +1,151 @@
+.header-cont {
+    background-color: transparent;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    transition: all .65s;
+    .navbar {
+        background-color: transparent;
+        padding: 1rem 0;
+        .navbar-brand {
+            width: 5.9375rem;
+            img{
+                width: 100%;
+            }
+        }
+        .navbar-collapse{
+            text-align: center;
+            justify-content: center;
+            @media (max-width: 991.98px){
+                justify-content: end;
+                text-align: end;
+                padding: 1rem;
+                background-color: #221f1f;
+                border-radius: 10px;
+                .navbar-nav{
+                    .nav-item{
+                        margin-bottom: 1rem;
+                    }
+                    
+                    }
+                }
+            
+            .navbar-nav {
+                .dropdown{
+                    .dropdown-menu {
+                        box-shadow: 0px 4px 16px rgba($title-color , .1);
+                        border-radius: 0px 0px 12px 12px;
+                        background: $header-color;
+                        padding: 1rem 0;
+                        width: 14.4375rem;
+                        li{
+                            margin-bottom: 2rem;
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                            .dropdown-item{
+                                padding: 0 1.25rem;
+                                white-space: normal;
+                                font-size: 1rem;
+                                line-height: 19px;
+                                color: $title-color;
+                                &:hover, &:active, &:focus{
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+                .nav-link{
+                    color: $white;
+                    font-size: 1.25rem;
+                    padding: 0 0.75rem;
+                    line-height: 19.36px;
+                    &.dropdown-toggle{
+                        &::after{
+                            display: inline-block;
+                            content: "";
+                            box-sizing: border-box;
+                            margin-#{$left}: 0.25rem;
+                            position: relative;
+                            top: 0;
+                            height: 0.5vw;
+                            width: 0.5vw;
+                            border-style: solid;
+                            border-color: $white;
+                            border-width: 0px 1px 1px 0px;
+                            transform: rotate(45deg);
+                            @media(max-width:991.98px){
+                                height: 0.5rem;
+                                width: 0.5rem;
+                            }
+                        }
+                    }
+                    &:hover{
+                        color: $yellow;
+                        &.dropdown-toggle{
+                            &::after{
+                                border-color: $yellow;
+                            }
+                        }
+                    }
+                }
+                .active{
+                    .nav-link{
+                        color: $yellow;
+                        &.dropdown-toggle{
+                            &::after{
+                                border-color: $yellow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.light-header{
+        background-color: $header-color;
+        .navbar-toggler-icon{
+            @media(max-width:991.98px){
+                filter: invert(0);
+            }
+        }
+        .navbar {
+            .navbar-collapse{
+                @media(max-width:991.98px){
+          background-color: $white;
+                }
+                .navbar-nav {
+                    .nav-link{
+                        color: $title-color;
+                        &.dropdown-toggle{
+                            &::after{
+                                border-color: $title-color;
+                            }
+                        }
+                        &:hover{
+                            color: $yellow;
+                            &.dropdown-toggle{
+                                &::after{
+                                    border-color: $yellow;
+                                }
+                            }
+                        }
+                    }
+                    .active{
+                        .nav-link{
+                            color: $yellow;
+                            &.dropdown-toggle{
+                                &::after{
+                                    border-color: $yellow;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+$grid-gutter-width: 15px !important;  
+//============breakpoints==============
+$breakpoints: (
+    "phone":        415px,
+    "phone-wide":   481px,
+    "phone-x-wide":   576px,
+    "phablet":      561px,
+    "tablet-small": 641px,
+    "tablet":       769px,
+    "tablet-wide":  993px,
+    "tablet-xwide":  1025px,
+    "desktop":      1201px,
+    "desktop-wide": 1367px,
+    "laptop" : 1600px
+    );

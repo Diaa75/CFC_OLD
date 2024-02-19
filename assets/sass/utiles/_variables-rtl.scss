@@ -1,0 +1,26 @@
+//===================directions===================================
+$left:right;
+$right: left;
+
+
+$default-direction:       rtl;
+$opposite-direction:      ltr;
+
+
+* {
+    direction: rtl;
+  }
+  
+  html,
+  body {
+    direction: rtl;
+  }
+  
+  [dir="rtl"] {
+    direction: rtl;
+  }
+  
+  * {
+    direction: rtl;
+  }
+  

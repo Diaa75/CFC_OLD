@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'Inter-Regular';
+    src: local('Inter Regular'), local('Inter-Regular'),
+    url("../fonts/Inter-Regular.eot"),
+    url("../fonts/Inter-Regular.eot?#iefix") format("embedded-opentype"),
+    url('../fonts/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/Inter-Regular.woff') format('woff'),
+    url('../fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Bison-Regular';
+    src: local('Bison Regular'), local('Bison-Regular'),
+        url("../fonts/Bison-Regular.eot"),
+        url("../fonts/Bison-Regular.eot?#iefix") format("embedded-opentype"),
+        url('../fonts/Bison-Regular.woff2') format('woff2'),
+        url('../fonts/Bison-Regular.woff') format('woff'),
+        url('../fonts/Bison-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+html,
+body {
+    font-size: 16px;
+    // @media (max-width:1665px) {
+    //     font-size: 14px;
+    // }
+    @media (max-width: 769px) {
+        font-size: 14px;
+    }
+    @media (max-width: 576px) {
+        font-size: 14px;
+    }
+ .container {
+    //     width: 100%;
+    //     margin: 0 auto;
+    //     @media (max-width: 1600px) and (min-width: 991.98px) {
+    //         padding-#{$left}: calc(10rem - 15px);
+    //         padding-#{$right}: calc(10rem - 15px);
+    //         max-width: 100%;
+    //     }
+        @media (min-width: 1600px) {
+            max-width: 100%;
+            padding-left: 10.3125rem;
+            padding-right: 10.3125rem;
+        }
+        @media (max-width: 1559px) and (min-width: 1200px) {
+            max-width: 1200px;
+        }
+    //     @media (max-width: 991.98px) and (min-width: 767.98px) {
+    //         padding-right: 2.5rem;
+    //         padding-left: 2.5rem;
+    //         max-width: 100%;
+    //     }
+        @media (max-width: 991.98px) {
+            padding-right: 1.375rem;
+            padding-left: 1.375rem;
+            max-width: 100%;
+        }
+     }
+}
+body,
+body:not(*:root),
+p,
+a,
+pre,
+li,
+span,
+.tooltip {
+    font-family: "Inter-Regular";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Bison-Regular";
+}
+
+[class^="icon-"],
+[class*=" icon-"],
+[class^="icon-"] *,
+[class*=" icon-"] * {
+    font-family: "icomoon" !important;
+}
+.no-padding {
+    padding: 0px !important;
+}
+.clickable-link {
+    cursor: pointer;
+}
+.show-mob {
+    display: none;
+    @media (max-width: 576px) {
+        display: block;
+    }
+}
+.hide-mob {
+    display: block;
+    @media (max-width: 576px) {
+        display: none;
+    }
+}
+.full-width {
+    width: 100%;
+    display: block;
+}
+
+.show {
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
+.HDN {
+    display: none;
+}
+.hide,
+.hide * {
+    opacity: 0;
+    visibility: hidden;
+    height: 0px !important;
+    padding: 0px !important;
+    width: 0;
+}
+
+a,
+.btn {
+    cursor: pointer !important;
+    &:hover,
+    &:focus {
+        outline: none !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+    }
+}
+[class^="col-"],
+[class*=" col-"] {
+    padding: 0 15px;
+}
+
+.main-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 43px;
+    margin-bottom: 3.8125rem;
+    position: relative;
+    z-index: 10;
+    padding-left: 1.25rem;
+    color: $title-color;
+    &::before{
+        content:" ";
+        display: inline-block;
+        width: 6.25rem;
+        height: 3.3125rem;
+        position: absolute;
+        left: 0;
+        top: -2px;
+        background-color: $secondary-color;
+        z-index: -1;
+    }
+}
+.empty.temp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-family: 'Inter-Regular';
+    color: $mid-gray;
+}

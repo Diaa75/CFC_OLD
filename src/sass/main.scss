@@ -1,0 +1,19 @@
+@import "base/_reset.scss";
+
+@import "utiles/_variables-ltr.scss";
+
+@import "utiles/_all.scss";
+
+///**********************vendors*************************////
+@import "vendors/_all.scss";
+
+///******************Shared& Layouts*********************////
+@import "layout/_all.scss";
+
+@import "shared/_all.scss";
+
+// @import "components/_all.scss";
+
+///******************pages-sections*********************////
+@import "pages/_all.scss";
+

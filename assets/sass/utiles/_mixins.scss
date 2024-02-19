@@ -1,0 +1,231 @@
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+  }
+  @mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+@mixin transform($property, $time) {
+    -webkit-transition: $property $time;
+    transition: $property $time; 
+}
+@mixin mq($width, $type: max) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media screen and (#{$type}-width: $width) {  
+            @content;  
+        }
+        @media print and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+} 
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
+@mixin truncate-multipleline($line-no) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $line-no;
+    -webkit-box-orient: vertical; 
+}
+@mixin css3-prefix($prop, $value) {
+    -webkit-#{$prop}: -webkit-#{$value};
+    -moz-#{$prop}: -moz-#{$value};
+    -ms-#{$prop}: -ms-#{$value};
+    -o-#{$prop}: -o-#{$value};
+    #{$prop}: #{$value};
+ }
+/*div {@include css3-prefix(transform, scale3d(2.5, 2, 1.5));}*/
+ @mixin vertical-center {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+ }
+/*div {@include vertical-center();}*/
+ @mixin font-face($name, $file) {
+    @font-face {
+    font-family: "#{$name}";
+    src: url("../fonts/#{$file}.eot");
+    src: url("../fonts/#{$file}.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/#{$file}.woff") format("woff"),
+    url("../fonts/#{$file}.ttf") format("truetype"),
+    url("../fonts/#{$file}.svg?#webfont") format("svg");
+  }
+ }
+ /*@include font-face("My Font", my-font);*/
+ @mixin abs-position ($top, $right, $bottom, $left) {
+    position: absolute; 
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+ }
+ /*div {@include abs-position(100px, 100px, auto, auto);}*/
+@mixin backgroundImage($size, $repeat) {
+    background-size: $size;
+    background-repeat: $repeat;
+}
+@mixin card-overlay($height) {
+    width: 100%;
+    height: $height;
+}
+@mixin wrap-urls {
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    white-space: -o-pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -hp-pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+@mixin print(){
+    @media print {
+      @content;
+    }
+}
+@mixin rotate($deg: 90){
+    $sDeg: #{$deg}deg;
+
+    -webkit-transform: rotate($sDeg);
+    -moz-transform: rotate($sDeg);
+    -ms-transform: rotate($sDeg);
+    -o-transform: rotate($sDeg);
+    transform: rotate($sDeg);
+}
+// (IE-v10+)
+@mixin IE_Only() {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { @content; }
+} 
+// (FireFox)
+@mixin FF_Only() {
+    @-moz-document url-prefix() {@content;} 
+}
+// (Safari)
+@mixin SF_Only() {
+    @media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) { @content; }}
+} 
+/* Microsoft Edge and Internet Explorer 11.*/
+@mixin IE_Edge_Only() {
+@supports (-ms-ime-align:auto) {
+    @content;
+}
+}
+@mixin owlnav(){
+    .owl-prev,
+    .owl-next {
+        outline: none !important;
+
+        &:hover {
+            background: none;
+        }
+        span {
+            display: inline-block;
+            background: $blue;
+            width: 40px;
+            height: 28px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 250ms ease-in-out;
+            line-height: 0;
+
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background: transparent;
+                text-indent: -9999px;
+                border-top: 2px solid $white;
+                border-#{$left}: 2px solid $white;
+                text-decoration: none;
+                color: transparent;
+          
+            }
+
+            &:hover {
+                box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+                background: $blue;
+            }
+
+        }
+    }
+    .owl-prev {
+        span {
+            &::after {
+                transform: rotate(-45deg);
+                @if $default-direction==rtl {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+    }
+    .owl-next {
+        span {
+            &::after {
+                transform: rotate(135deg);
+                @if $default-direction==rtl {
+                    transform: rotate(-135deg);
+                }
+            }
+        }
+
+    }
+    .owl-nav {
+        font-size: 0;
+    }
+    .owl-dots {
+        .owl-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50px;
+            border: 1px solid $blue !important;
+            display: inline-block;
+            margin-#{$right}: 12px;
+            outline: none;
+            &.active{
+                background-color: $blue;
+            }
+        }
+    }
+
+}
+// scroll bar
+@mixin scrollBar {
+    ::-webkit-scrollbar {
+        width: 5px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgba($primary-color,.2);
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba($primary-color,.4);
+      }
+
+}

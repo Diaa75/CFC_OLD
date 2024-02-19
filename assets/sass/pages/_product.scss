@@ -1,0 +1,85 @@
+.header-cont {
+    .navbar {
+        .navbar-collapse {
+            .dark-nav-item {
+                .nav-link {
+                    color: $title-color;
+                    &.dropdown-toggle{
+                        &::after{
+                            border-color: $title-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.product{
+    padding-bottom: 5.3125rem;
+    .header-background {
+        height: 6.25rem;
+        background-color: $header-color;
+    }
+    .banner-cont {
+        background-image: none;
+        height: auto;
+        padding-top: 1.875rem;
+    }
+    .main-title{
+        margin-bottom: 1.5rem;
+    }
+    .product-details{
+        .card-item {
+            flex-direction: column;
+            .card-details {
+                display: flex;
+                flex-direction: row;
+                @media (max-width: 640px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .img-cont{
+                        width: 20rem;
+            }
+                .product-value {
+                    margin-top: 1.25rem;
+                    ul{
+                        li {
+                            padding: 0.5rem 1rem;
+                            color: $min-footer-color;
+                            font-size: 1.25rem;
+                            line-height: 24px;
+                            &:nth-child(even){
+                                background-color: $card-btn;
+                            }
+                            .prod-item{
+                                display: flex;
+                                align-items: baseline;
+                                .icon-true{
+                                    color: $green;
+                                    margin-#{$right}:.625rem ;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .product-item{
+                margin-top: 1.875rem;
+                ul{
+                    li {
+                        padding: 0.5rem 1rem;
+                        color: $min-footer-color;
+                        font-size: 1.25rem;
+                        line-height: 24px;
+                        border: 1px solid transparent;
+                        &:nth-child(even){
+                            background-color: $card-btn;
+                            border-color:$header-color ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

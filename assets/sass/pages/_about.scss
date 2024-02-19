@@ -1,0 +1,224 @@
+.about-cont {
+    padding: 3.0625rem 0;
+    .about-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        margin-bottom: 3.96875rem;
+        padding-#{$left}: 2rem;
+        ul{
+            list-style: disc;
+            li{
+                font-size: 1.25rem;
+                line-height: 32px;
+                margin-bottom: 0.625rem;
+                color: $font-color;
+                span{
+                    display: flex;
+                    font-size: 1.5rem;
+                    margin-bottom: .625rem;
+                }
+            }
+        }
+        .Commercial-data{
+            color: $min-footer-color;
+            font-size: 1.25rem;
+            line-height: 24px;
+            margin-bottom: 2.625rem;
+        }
+    }
+    .about-img{
+        img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+}
+.aboutpage-cont{
+    .main-title {
+        margin-bottom: 2.75rem;
+    }
+    .banner-cont {
+        background-image: url("../../assets/img/about-banner.jpg");
+        height: 28.125rem;
+    }
+    .about-data{
+        flex-direction: column;
+        margin-bottom: 0;
+        .about-img{
+            margin-bottom: 4.625rem            ;
+            width: 100%;
+        }
+    }
+    &.aboutproduct-page , &.fcfferthubs-page{
+        .banner-cont {
+            background-image: url("../../assets/img/about-product.jpg");
+            height: 28.125rem;
+        }
+        &::before {
+            content: "";
+            width: 100%;
+            height: 200px;
+            display: block;
+            background-image: linear-gradient(to top, rgba(#000 ,0), #566d93);
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+        }
+        .about-cont {
+            padding: 3.0625rem 0;
+            background-color: $background-color;
+            .aboutproduct-data{
+                position: relative;
+                .img-cont {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    .about-img-yellow {
+                        position: relative;
+                        #{$left}: 4rem;
+                        z-index: 0;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                    .about-img {
+                        position: relative;
+                        z-index: 1;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .aboutproduct-cont {
+                    position: absolute;
+                    top: calc(100% / 4);
+                    z-index: 10;
+                    padding: 2rem 3rem;
+                    box-shadow: 0px 4px 16px #bccada40;
+                    border-radius: 16px;
+                    background: $title-color;
+                    color: $white;
+                    font-size: 1.25rem;
+                    line-height: 24px;
+                    width: 55%;
+                    @media (max-width: 991.98px) {
+                        width: 100%;
+                    }
+                    @media (max-width: 640px) {
+                       position: relative;
+                    }
+                    ul {
+                        list-style: disc;
+                        li{
+                            margin-bottom: .625rem;
+                        }
+                    }
+                }
+            }
+        }
+        .Commercial-cont{
+            padding: 3.0625rem 0;
+            .aboutproduct-cont {
+                padding: 2rem 3rem;
+                box-shadow: 0px 4px 16px #bccada40;
+                border-radius: 16px;
+                background: $title-color;
+                width: 62%;
+                margin: 0 auto;
+                margin-bottom: 2.625rem;
+                position: relative;
+                .Commercial-txt{
+                    font-size: 1.25rem;
+                    line-height: 24px;
+                    color: $yellow;
+                }
+                .icon-Quotemarks-right {
+                    position: absolute;
+                    top: 0.5rem;
+                    #{$right}: -1rem;
+                }
+                .icon-Quotemarks-left {
+                    position: absolute;
+                    bottom: 0.5rem;
+                    #{$left}: -1rem;
+                }
+            }
+            .Commercial-data{
+                color: $min-footer-color;
+                font-size: 1.25rem;
+                line-height: 24px;
+                margin-bottom: 2.625rem;
+                
+                }
+                .img-cont{
+                    img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: contain;
+                    }
+            }
+        }
+    }
+    &.fcfferthubs-page{
+        .banner-cont {
+            background-image: url("../../assets/img/about-banner.jpg");
+            height: 28.125rem;
+            .aboutproduct-data{
+                position: relative;
+                .img-cont {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    .about-img-yellow {
+                        position: relative;
+                        #{$left}: 4rem;
+                        z-index: 0;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                    .about-img {
+                        position: relative;
+                        z-index: 1;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .aboutproduct-cont {
+                    position: absolute;
+                    top: calc(100% / 4);
+                    z-index: 10;
+                    padding: 2rem 3rem;
+                    box-shadow: 0px 4px 16px #bccada40;
+                    border-radius: 16px;
+                    background: $title-color;
+                    color: $white;
+                    font-size: 1.25rem;
+                    line-height: 24px;
+                    width: 55%;
+                    ul {
+                        list-style: disc;
+                        li{
+                            margin-bottom: .625rem;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}

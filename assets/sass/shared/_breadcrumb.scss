@@ -1,0 +1,32 @@
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 0;
+    margin-bottom: 1.25rem;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid $header-color;
+    .breadcrumb-item{
+        font-size: 1rem;
+        line-height: 21px;
+        a{
+            color: $yellow;
+        }
+        &.active {
+            color: $mid-gray;
+        }
+    }
+    .breadcrumb-item+.breadcrumb-item::before {
+        float: none;
+        padding-#{$right}: 0.5rem;
+        color: $mid-gray;
+        content: "\e900";
+        font-family: 'icomoon';
+        font-size: .5rem;
+        display: inline-block;
+        transform: rotate(-90deg);
+        position: relative;
+        top: -7px;
+    }
+}
